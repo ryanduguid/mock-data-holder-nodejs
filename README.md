@@ -82,7 +82,7 @@ To run in this mode
     - 127.0.0.1 tls-gateway
     - 127.0.0.1 authserver-ui
     - 127.0.0.1 cdr-auth-server
-4. NodeJS (verified with v18.19.0)
+4. Node.js (dependency installation and TypeScript compilation verified with v20.20.2)
 
 ### Installation
 
@@ -90,7 +90,7 @@ To run in this mode
 2. After forking the repository, clone it to your local machine. You can do this by running the following command in your terminal or command prompt:
     
     ```bash
-    git clone <https://github.com/your-username/project-name.git>
+    git clone https://github.com/your-username/project-name.git
     ```
     
     Replace **`your-username`** with your GitHub username and **`project-name`** with the name of your repository.
@@ -102,12 +102,22 @@ To run in this mode
     ```
     
     Replace **`project-name`** with the name of the repository.
-    
+
+4. Install the data holder's dependencies:
+
+    ```bash
+    cd test-data-server
+    npm ci
+    ```
+
+    The Node.js application and its `package.json` are in `test-data-server`.
+    Run npm commands from this directory. Run Docker Compose commands from the
+    repository root, where `docker-compose.yaml` is located.
 
 ### Build
 
 1. Customise the data holder project as needed for your specific use case. 
-2. Navigate to the project directory and execute the following command:
+2. From `test-data-server`, build the application:
 
 ```bash
 npm run build
@@ -115,28 +125,35 @@ npm run build
 
 Note: A custom build can be run from any debug environment and will interact with the other containers (eg databases). 
 
+`npm run build` compiles TypeScript and copies the TLS files into the build
+directory. To check TypeScript compilation only, run `npm run build:docker`.
+
 ### Run
 
-1. Navigate to the root directory of the repository and the run the following command to start the services defined in the Docker Compose file:
+1. Open a second terminal at the repository root and start the services defined in the Docker Compose file:
     
     ```bash
-    docker-compose up
+    docker-compose up -d
     ```
     
     This command will automatically pull the necessary Docker images and create the containers required for the Mock Data Holder, setting up everything you need to get started without manually handling the code repository. 
     
-2. Now **stop** the Mock data holder container by running the following command:
+2. In that terminal, stop the Mock Data Holder container so the local application can use its ports. Leave the other services running:
     
     ```bash
     docker stop mock-data-holder
     ```
     
-3. Start the development server by running the following command in the project directory:
+3. Return to the terminal in `test-data-server` and start the local application:
     
     ```bash
     npm start
     ```
-    
+
+    This script rebuilds the application, copies the repository-root `.env` file
+    into the build directory and starts the server. It requires the `cp` command;
+    on Windows, ensure `cp` is available to npm scripts.
+
 4. Open your web browser and navigate to [https://localhost:9001](https://localhost:9001/) to access the Mock Data Recipient application. This application can be used to generate an access token required to access the API.
 
 ## Contribution Process
