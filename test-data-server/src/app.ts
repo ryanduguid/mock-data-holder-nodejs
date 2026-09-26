@@ -49,7 +49,6 @@ import session from 'express-session';
 import { AcccAuthService } from './modules/accc-auth-service';
 
 dotenv.config();
-console.log(JSON.stringify(process.env, null, 2));
 
 const exp = express;
 const app = express();
