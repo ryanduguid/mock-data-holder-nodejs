@@ -82,7 +82,7 @@ To run in this mode
     - 127.0.0.1 tls-gateway
     - 127.0.0.1 authserver-ui
     - 127.0.0.1 cdr-auth-server
-4. NodeJS (verified with v18.19.0)
+4. Node.js 22 or later (verified with v22.23.3; use a maintained LTS release).
 
 ### Installation
 

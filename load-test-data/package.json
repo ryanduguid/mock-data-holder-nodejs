@@ -1,6 +1,9 @@
 {
   "name": "load-test-data",
   "version": "1.2.0",
+  "engines": {
+    "node": ">=22"
+  },
   "description": "Load data generated from testdata-cli into MongoDB",
   "main": "app.js",
   "scripts": {
