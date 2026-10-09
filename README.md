@@ -1,5 +1,9 @@
 # Mock Data Holder (NodeJS)
 
+**Fork status**
+
+[![Fork code quality](https://app.codacy.com/project/badge/Grade/c68126d0e7d94dd0b708d931051df802?branch=master)](https://app.codacy.com/gh/ryanduguid/mock-data-holder-nodejs/dashboard)
+
 ## Overview
 
 The Mock Data Holder (NodeJS) is a reference implementation of a CDR Data Holder solution, designed to support the Consumer Data Right (CDR) implementation journey. It aims to assist CDR participants in developing their own Data Holder (DH) systems that comply with Consumer Data Standards. The system consist of a number of docker containers, some of which are maintained by the ACCC, others are maintained by the Data Standards Body.
