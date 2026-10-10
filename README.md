@@ -94,7 +94,7 @@ To run in this mode
 2. After forking the repository, clone it to your local machine. You can do this by running the following command in your terminal or command prompt:
     
     ```bash
-    git clone <https://github.com/your-username/project-name.git>
+    git clone https://github.com/your-username/project-name.git
     ```
     
     Replace **`your-username`** with your GitHub username and **`project-name`** with the name of your repository.
