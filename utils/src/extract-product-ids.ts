@@ -29,14 +29,7 @@ holders?.forEach((h: any) => {
     })
 });
 
-if (prodIds?.length > 0) {
-    let writeString = "[";
-    /* write the id */
-    prodIds?.forEach((p: any) => {
-        const json = JSON.stringify(p, null, 2);
-        writeString = writeString + json + ","; 
-    });
-    writeString = writeString + "]";
-    writeFileSync(productIdOutputFile,writeString);
+if (prodIds.length > 0) {
+    writeFileSync(productIdOutputFile, JSON.stringify(prodIds, null, 2));
 }
 
