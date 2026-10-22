@@ -1,8 +1,12 @@
 # Mock Data Holder (NodeJS)
 
+<div align="center">
+
 **Fork status**
 
 [![Fork code quality](https://img.shields.io/codacy/grade/c68126d0e7d94dd0b708d931051df802/master?style=flat&labelColor=000000)](https://app.codacy.com/gh/ryanduguid/mock-data-holder-nodejs/dashboard)
+
+</div>
 
 ## Overview
 
